@@ -1,2 +1,32 @@
-<h1>Jets#index</h1>
-<p>Find me in app/views/jets/index.html.erb</p>
+<h1>All the Jets in Paris</h1>
+
+
+<div class="container">
+  <div class="cards-container">
+    <div class="row">
+      <% @jets.each do |jet|%>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(../assets/images/logo.png);">
+            <div class="card-city"><%= jet.city %></div>
+            <div class="card-description">
+              <p><%= jet.name %></p>
+              <ul class= "card-settings list-inline" >
+                <li><%= "#{jet.price_day} €"%></li>
+                <li><%= "#{jet.pax} pers" %></li>
+              </ul>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <div id="map"></div>
+  </div>
+</div>
+
+
+
