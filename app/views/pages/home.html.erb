@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_url("homepage.jpg")%>);">
+  <div class="main_title">
+    Find your next flight.
+  </div>
+  <div class="main_form">
+    <form action="/jets" class='form-inline'>
+        <input type="text" name="city" placeholder="Where?" class='form-control'>
+        <input type="date" name="start_date" class='form-control'>
+        <input type="date" name="end_date" class='form-control'>
+        <input type="number" name="pax" class='form-control' placeholder="How many?">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+</div>
