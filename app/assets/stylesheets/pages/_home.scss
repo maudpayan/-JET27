@@ -1,1 +1,21 @@
-// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.main_title {
+  margin-top: 30px;
+  color: white;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.main_form {
+  margin-bottom: 150px;
+}
+
