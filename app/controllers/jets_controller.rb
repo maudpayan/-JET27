@@ -16,8 +16,11 @@ class JetsController < ApplicationController
 
   def create
     @jet = Jet.new(jet_params)
-    @jet.save
-    redirect_to jets_path
+    @jet.user = current_user
+    if @jet.save
+      redirect_to jets_path
+    else
+      render :new
   end
 
   def edit
@@ -30,7 +33,7 @@ class JetsController < ApplicationController
 
   def destroy
     @jet.destroy
-    redirect_to jets_params
+    redirect_to jets_path
   end
 
 private
