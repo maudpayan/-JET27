@@ -21,6 +21,7 @@ class JetsController < ApplicationController
       redirect_to jets_path
     else
       render :new
+    end
   end
 
   def edit
