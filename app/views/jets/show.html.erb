@@ -1,9 +1,37 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_url("homepage.jpg")%>);">
+<div class="banner-jet" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @jet.photo %>');">
   <div class="banner-content">
   </div>
 </div>
+
 <div class="container">
   <div class="jet-details">
+    <h2><%= "Rent a jet in #{@jet.city}" %></h2>
+    <br>
+    <h3><%= @jet.name %></h3>
+    <ul class="list-inline jet-parameters" >
+      <li>
+        <i class="fas fa-user" >   <%="#{@jet.pax}pers" %></i>
+      </li>
+      <li>
+        <i class="fas fa-euro-sign"> <%= "#{@jet.price_day}" %></i>
+        </li>
+    </ul>
+    <br>
+    <p><%= @jet.description %></p>
+  </div>
+
+  <div class="booking-details">
+
+    <div class="col-sm-4 col-sm-offset-4">
+      <form action="/confirmation" class='simple_form' id="resa_form">
+        <h3 style='font-weight: bolder'>Book your next flight.</h3>
+        <input type="text" name="city" placeholder="Where?" class='form-control'>
+        <input type="date" name="start_date" class='form-control' placeholder="From?">
+        <input type="date" name="end_date" class='form-control' placeholder="To?">
+        <input type="number" name="pax" class='form-control' placeholder="How many?" min='0'>
+        <input type="submit" value="Search" class='btn btn-primary' style='margin-top: 10px;'>
+      </form>
+    </div>
 
   </div>
 </div>

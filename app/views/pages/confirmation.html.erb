@@ -1,0 +1,11 @@
+
+
+<h1>You are ready for your flight</h1>
+<h2>Booking details</h2>
+<ul class="booking-recap">
+  <li><%= @booking.jet.name %></li>
+  <li><%="your reservation is from #{@booking.start_date} to #{@booking.end_date}"%></li>
+  <li><%= @booking.price_total %></li>
+  <li><%= @booking.status %></li>
+</ul>
+
