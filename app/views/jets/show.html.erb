@@ -3,7 +3,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container-show">
   <div class="jet-details">
     <h2><%= "Rent a jet in #{@jet.city}" %></h2>
     <br>
@@ -22,17 +22,14 @@
 
   <div class="booking-details">
 
-    <div class="col-sm-4 col-sm-offset-4">
-      <form action="/confirmation" class='simple_form' id="resa_form">
-        <h3 style='font-weight: bolder'>Book your next flight.</h3>
-        <input type="text" name="city" placeholder="Where?" class='form-control'>
-        <input type="date" name="start_date" class='form-control' placeholder="From?">
-        <input type="date" name="end_date" class='form-control' placeholder="To?">
-        <input type="number" name="pax" class='form-control' placeholder="How many?" min='0'>
-        <input type="submit" value="Search" class='btn btn-primary' style='margin-top: 10px;'>
-      </form>
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Book your next flight</h2>
+      <%= simple_form_for([@jet, @booking]) do |f| %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: { class: "datepicker", value: params[:start_date] } %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: { class: "datepicker", value: params[:end_date] } %>
+          <%= f.button :submit, "Book", class: "btn btn-primary" %>
+      <%end%>
     </div>
-
   </div>
 </div>
 
