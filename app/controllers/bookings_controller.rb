@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
   def create
     @jet = Jet.find(params[:jet_id])
     @booking = Booking.new(booking_params)
+    @booking.status = "Upcoming"
     @booking.jet = @jet
     @booking.user = current_user
     if @booking.save
