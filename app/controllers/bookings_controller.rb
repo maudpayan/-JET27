@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
-    @my_bookings = current_user.jets.map(&:bookings)
+    @my_bookings = current_user.jets.map(&:bookings).flatten
   end
 
   def show
@@ -14,14 +14,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @jet = Jet.find(params[:id])
+    @jet = Jet.find(params[:jet_id])
     @booking = Booking.new(booking_params)
     @booking.jet = @jet
     @booking.user = current_user
     if @booking.save
       redirect_to 'pages#home'
     else
-      render jets_path(@jet)
+      render bookings_path
     end
   end
 
