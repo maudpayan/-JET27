@@ -40,7 +40,7 @@ class JetsController < ApplicationController
 private
 
   def jet_params
-    params.require(:jet).permit(:name, :description, :price_day, :pax, :city, :address, :zipcode)
+    params.require(:jet).permit(:name, :description, :price_day, :pax, :city, :address, :zip, :photo)
   end
 
   def set_jet
