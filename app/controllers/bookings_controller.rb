@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @my_bookings = current_user.jets.map(&:bookings)
   end
 
   def show
