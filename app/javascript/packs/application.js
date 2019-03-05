@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugins/flatpickr"
 
 function initMap() {
     // Create a map object and specify the DOM element for display.
