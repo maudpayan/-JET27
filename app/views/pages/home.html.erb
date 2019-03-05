@@ -1,15 +1,19 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_url("homepage.jpg")%>);">
   <div class="main_title">
-    Find your next flight.
+    Jet27
   </div>
-  <div class="main_form">
-    <form action="/jets" class='form-inline'>
+  <div class="row" style='margin-top: 200px;'>
+    <div class="main_form col-sm-4 col-sm-offset-4">
+      <form action="/jets" class='simple_form'>
+        <h3 style='font-weight: bolder'>Find your next flight.</h3>
         <input type="text" name="city" placeholder="Where?" class='form-control'>
-        <input type="date" name="start_date" class='form-control'>
-        <input type="date" name="end_date" class='form-control'>
-        <input type="number" name="pax" class='form-control' placeholder="How many?">
-      <input type="submit" value="Search">
-    </form>
-  </div>
+        <input type="date" name="start_date" class='form-control' placeholder="From?">
+        <input type="date" name="end_date" class='form-control' placeholder="To?">
+        <input type="number" name="pax" class='form-control' placeholder="How many?" min='0'>
+        <input type="submit" value="Search" class='btn btn-primary' style='margin-top: 10px;'>
+      </form>
+    </div>
+   </div>
 </div>
+
