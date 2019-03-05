@@ -3,7 +3,7 @@ class JetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @jets = Jet.where(city: params[:city], pax: params[:pax])
+    @jets = Jet.where(city: params[:city]).where("pax >= ?", params[:pax].to_i)
   end
 
   def show
