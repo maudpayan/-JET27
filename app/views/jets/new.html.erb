@@ -1,2 +1,17 @@
-<h1>Jets#new</h1>
-<p>Find me in app/views/jets/new.html.erb</p>
+<h1 style='text-align: center'>Rent your jet</h1>
+
+<div class="container">
+  <%= simple_form_for @jet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price_day %>
+    <%= f.input :pax %>
+    <%= f.input :address %>
+    <%= f.input :zipcode %>
+    <%= f.input :city %>
+    <div class="button-center-form" style='text-align: center; margin-bottom: 10px;'>
+        <%= f.button :submit, class: 'btn btn-primary'%>
+      </div>
+    </div>
+  <% end %>
+</div>
