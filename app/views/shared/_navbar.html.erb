@@ -6,12 +6,10 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="/jets/new" class="navbar-wagon-item navbar-wagon-link">Rent your jet </a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Help</a>
-
+    <a href="/jets/new" class="navbar-wagon-item navbar-wagon-link">Lease your jet </a>
     <!-- Profile picture with dropdown list -->
     <% if user_signed_in? %>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">My jets</a>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
