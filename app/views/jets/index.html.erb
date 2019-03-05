@@ -5,7 +5,7 @@
   <div class="cards-container">
     <div class="row">
       <% @jets.each do |jet|%>
-        <%= link_to jet_path(jet.id) do %>
+        <%= link_to jet_path(@search.merge(id: jet.id)) do %>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo, height: 300, width: 400, crop: :fill %>')">
               <div class="card-city"><%= jet.city %></div>
