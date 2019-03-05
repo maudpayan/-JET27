@@ -1,12 +1,59 @@
-<h1>All your bookings</h1>
+<div class="container">
+  <div class="text-center">
+    <h1>All your bookings</h1>
+  </div>
 
-<h3>Rentings jets</h3>
-<% @bookings.each do |booking| %>
-  <p><%= booking.jet.name %></p>
-<% end %>
+  <div class="jets_rented">
+    <h3>Jets rented</h3>
+      <div class="cards-container">
+        <div class="row">
+          <% @bookings.each do |booking|%>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
+                <div class="card-city"><%= booking.jet.city %></div>
+                  <div class="card-description">
+                    <p><%= booking.jet.name %></p>
+                    <ul class= "card-settings list-inline" >
+                      <li><%= "#{booking.jet.price_day} €"%></li>
+                      <li><%= "#{booking.jet.pax} pers" %></li>
+                    </ul>
+                  </div>
+                <%= cl_image_tag booking.jet.user.photo, class: 'card-user' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
 
-<h3>Leasing jets</h3>
-<% @my_bookings.each do |booking| %>
-  <p><%= booking.jet.name %></p>
-<% end %>
+
+  <div class="jets-leased" style='margin-top: 40px;'>
+    <% if @my_bookings.any? %>
+    <h3>Jets leased</h3>
+    <div class="cards-container">
+      <div class="row">
+        <% @my_bookings.each do |booking|%>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-city"><%= booking.jet.city %></div>
+                <div class="card-description">
+                  <p><%= booking.jet.name %></p>
+                  <ul class= "card-settings list-inline" >
+                    <li><%= "#{booking.jet.price_day} €"%></li>
+                    <li><%= "#{booking.jet.pax} pers" %></li>
+                  </ul>
+                </div>
+              <%= cl_image_tag booking.jet.user.photo, class: 'card-user' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% else %>
+    <h3> No jet leased yet</h3>
+    <a href="/jets/new" class="btn btn-primary" style='margin-top:20px;'>Lease your jet </a>
+  <% end %>
+  </div>
+</div>
 
