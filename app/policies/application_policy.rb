@@ -7,15 +7,15 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def show?
-    false
+    record.user == user || record.jet.user == user
   end
 
   def create?
-    false
+    return true
   end
 
   def new?
@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    false
+    record.user == user || record.jet.user == user
   end
 
   def edit?
@@ -31,7 +31,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    record.user == user
   end
 
   class Scope
