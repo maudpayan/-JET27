@@ -3,8 +3,9 @@
   </div>
 </div>
 
-<div class="container-show">
-  <div class="jet-details">
+<div class="container container-show">
+
+  <div class="container jet-details">
     <h2><%= "Rent a jet in #{@jet.city}" %></h2>
     <br>
     <h3><%= @jet.name %></h3>
@@ -13,24 +14,30 @@
         <i class="fas fa-user" >   <%="#{@jet.pax}pers" %></i>
       </li>
       <li>
-        <i class="fas fa-euro-sign"> <%= "#{@jet.price_day}" %></i>
+        <i class="fas fa-euro-sign" id="jet-price" > <%= "#{@jet.price_day}" %></i>
         </li>
     </ul>
     <br>
     <p><%= @jet.description %></p>
   </div>
 
-  <div class="booking-details">
 
+  <div class="container booking-details">
     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <h2>Book your next flight</h2>
-      <%= simple_form_for([@jet, @booking]) do |f| %>
-        <%= f.input :starts_at, as: :string, required: false, input_html: { class: "datepicker", value: params[:start_date] } %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: { class: "datepicker", value: params[:end_date] } %>
-          <%= f.button :submit, "Book", class: "btn btn-primary" %>
-      <%end%>
+      <h2></h2>
+
+      <%= simple_form_for ([@jet, @booking]) do |f| %>
+      <br>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker", value: params[:start_date]} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker", value: params[:end_date]  } %>
+        <%= f.hidden_field :price_total %>
+        <h5 id="price-total" style="font-weight: bold"><%= "Total: #{@booking.price_total} €" %></h5>
+        <div class="text-center">
+          <%= f.button :submit, "Book", class: "btn btn-primary",  style: "border-radius: 10px;"%>
+        </div>
+        <br>
+      <% end %>
     </div>
   </div>
+
 </div>
-
-
