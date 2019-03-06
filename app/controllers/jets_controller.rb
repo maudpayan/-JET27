@@ -1,4 +1,5 @@
 class JetsController < ApplicationController
+  require 'date';
   before_action :set_jet, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -8,7 +9,12 @@ class JetsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    my_startdate = Date.parse(params[:start_date])
+    my_enddate = Date.parse(params[:end_date])
+    diff = my_enddate.mjd - my_startdate.mjd
+
+    price = @jet.price_day * diff
+    @booking = Booking.new(start_date: my_startdate, end_date: my_enddate, price_total: price)
   end
 
   def new
@@ -47,4 +53,5 @@ private
   def set_jet
     @jet = Jet.find(params[:id])
   end
+
 end
