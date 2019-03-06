@@ -1,16 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_url("homepage.jpg")%>); padding-bottom: 25px">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_url("mainv2.jpg")%>); padding-bottom: 25px">
   <div class="main_title">
     <!-- Jet27 -->
   </div>
-  <div class="row" style='margin-top: 200px;'>
-    <div class="col-sm-4 col-sm-offset-4">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-4">
       <form action="/jets" class='simple_form' id="main_form" >
         <h3 style='font-weight: bolder'>Find your next flight.</h3>
         <input type="text" name="city" placeholder="Where?" class='form-control'>
-        <input type="date" name="start_date" class='form-control' placeholder="From?">
-        <input type="date" name="end_date" class='form-control' placeholder="To?">
-        <input type="number" name="pax" class='form-control' placeholder="How many?" min='0'>
-        <input type="submit" value="Search" class='btn btn-primary' style='margin-top: 10px;'>
+        <input type="date" name="start_date" class=' form-control datepicker' placeholder="From" style='background-color: white'>
+        <input type="date" name="end_date" class=' form-control datepicker' placeholder="To" style='background-color: white'>
+        <input type="number" name="pax" class='form-control' placeholder="Passengers" min='0'>
+        <input type="submit" value="Search" class='btn btn-primary' style='margin-top: 20px; border-radius: 4px; padding: 3px 15px;'>
       </form>
     </div>
    </div>
