@@ -14,7 +14,7 @@ class JetsController < ApplicationController
     diff = my_enddate.mjd - my_startdate.mjd
 
     price = @jet.price_day * diff
-    @booking = Booking.new(start_date: my_startdate, end_date: my_enddate, price_total: price)
+    @booking = Booking.new(start_date: my_startdate, end_date: my_enddate, price_total: price, pax_booking: params[:pax])
   end
 
   def new
