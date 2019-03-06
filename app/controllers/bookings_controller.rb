@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     @booking.status = "Upcoming"
     @booking.jet = @jet
     @booking.user = current_user
+    @booking.status = 'Booked'
     if @booking.save
       redirect_to 'pages#home'
     else
