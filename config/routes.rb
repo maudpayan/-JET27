@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :jets do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :show, :edit, :update, :delete]
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy]
   get '/confirmation', to: 'pages#confirmation', as: :confirmation
 end

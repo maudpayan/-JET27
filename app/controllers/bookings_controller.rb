@@ -32,11 +32,14 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(set_params)
+    authorize @booking
     redirect_to bookings_path
   end
 
   def destroy
-    @booking.delete
+    @booking = set_params
+    Booking.delete(@booking)
+    authorize @booking
     redirect_to bookings_path
   end
 

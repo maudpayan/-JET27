@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    record.user == user || record.jet.user == user
+    false
   end
 
   def edit?
@@ -31,7 +31,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == user || record.jet.user == user
   end
 
   class Scope
