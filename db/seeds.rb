@@ -18,12 +18,10 @@ end
 
 10.times do
   name = Faker::Name.name
-  description = Faker::TvShows::GameOfThrones.quote
+  description = Faker::ChuckNorris.fact
   price_day = Faker::Number.digit
   pax = Faker::Number.digit
-  city = Faker::Address.city
-  address = Faker::Address.street_address
-  zipcode = Faker::Address.zip_code
-  new_jet = Jet.create!(user: users.sample, name: name, description: description, price_day: price_day, pax: pax, city: city, address: address, zipcode: zipcode)
+  address = Faker::Address.full_address
+  new_jet = Jet.create!(user: users.sample, name: name, description: description, price_day: price_day, pax: pax, address: address)
 end
 
