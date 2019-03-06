@@ -3,8 +3,8 @@
   background-position: center;
   height: calc(100vh - 70px);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: start;
   text-align: center;
 }
 
@@ -35,12 +35,13 @@
 
 .simple_form {
   background-color: white;
-  padding: 7px 25px;
+  padding: 15px 40px;
   border-radius: 4px;
 }
 
 .simple_form h3 {
   margin: 0px;
+  margin-bottom: 20px;
 }
 
 
