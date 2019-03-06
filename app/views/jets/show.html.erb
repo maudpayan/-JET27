@@ -28,8 +28,8 @@
 
       <%= simple_form_for ([@jet, @booking]) do |f| %>
       <br>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker", value: params[:start_date]} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker", value: params[:end_date]  } %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker", value: params[:start_date], style:'background-color: white'} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker", value: params[:end_date], style:'background-color: white' } %>
         <%= f.hidden_field :price_total %>
         <%= f.hidden_field :pax_booking %>
         <p id="pax-booking"><%= "Number of passengers: #{@booking.pax_booking}" %></p>
