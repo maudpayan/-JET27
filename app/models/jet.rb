@@ -1,4 +1,7 @@
 class Jet < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   belongs_to :user
   has_many :bookings
   mount_uploader :photo, PhotoUploader
@@ -6,8 +9,6 @@ class Jet < ApplicationRecord
   validates :description, presence: true
   validates :price_day, presence: true
   validates :pax, presence: true
-  validates :city, presence: true
   validates :address, presence: true
-  validates :zipcode, presence: true
   validates :photo, presence: true
 end

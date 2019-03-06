@@ -4,8 +4,14 @@ class JetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @search = { city: params[:city], pax: params[:pax], start_date: params[:start_date], end_date: params[:end_date] }
-    @jets = Jet.where(city: params[:city]).where("pax >= ?", params[:pax].to_i)
+    @search = { address: params[:address], pax: params[:pax], start_date: params[:start_date], end_date: params[:end_date] }
+    @jets = Jet.near(params[:address], 10).where("pax >= ?", params[:pax].to_i).where.not(latitude: nil, longitude: nil)
+    @markers = @jets.map do |jet|
+      {
+        lng: jet.longitude,
+        lat: jet.latitude
+      }
+    end
   end
 
   def show
@@ -47,7 +53,7 @@ class JetsController < ApplicationController
 private
 
   def jet_params
-    params.require(:jet).permit(:name, :description, :price_day, :pax, :city, :address, :zipcode, :photo)
+    params.require(:jet).permit(:name, :description, :price_day, :pax, :address, :photo)
   end
 
   def set_jet
