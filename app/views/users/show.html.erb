@@ -1,8 +1,8 @@
 <div class="container">
   <h1><%= @user.first_name%> <%= @user.last_name %></h1>
-  <p>Born on <%= @user.birth_date.strftime("%d - %m -%Y")%></p>
+  <p>Born on: <%= @user.birth_date.strftime("%d - %m -%Y")%></p>
   <% unless @user.phone_number.empty? %>
-    <p> Phone <%= @user.phone_number%></p>
+    <p> Phone: <%= @user.phone_number%></p>
   <% end %>
 
   <div class="jets_rented">
@@ -35,7 +35,7 @@
           </div>
         <% else %>
           <h3> No jet yet</h3>
-          <a href="/" class="btn btn-primary" style='margin-top:20px;'> Lease a jet </a>
+          <a href="/jets/new" class="btn btn-primary">Lease your jet </a>
         <% end %>
     </div>
 </div>
