@@ -11,7 +11,7 @@
             <% @bookings.each do |booking|%>
               <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
-                  <div class="card-city"><%= booking.jet.city %></div>
+                  <div class="card-city"><%= booking.jet.address %></div>
                     <div class="card-description">
                       <p><%= booking.jet.name %></p>
                       <ul class= "card-settings list-inline" >
@@ -45,7 +45,7 @@
         <% @my_bookings.each do |booking|%>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
-              <div class="card-city"><%= booking.jet.city %></div>
+              <div class="card-city"><%= booking.jet.address %></div>
                 <div class="card-description">
                   <p><%= booking.jet.name %></p>
                   <ul class= "card-settings list-inline" >

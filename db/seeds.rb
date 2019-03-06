@@ -6,22 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+# require 'faker'
 
-User.destroy_all
-Jet.destroy_all
+# User.destroy_all
+# Jet.destroy_all
 
-users = []
-5.times do
- users << User.create(email: 'maudichou56@hotmail.fr', password: '123456')
-end
+# users = []
+# 5.times do
+#  users << User.create(email: 'maudichou56@hotmail.fr', password: '123456')
+# end
 
-10.times do
-  name = Faker::Name.name
-  description = Faker::ChuckNorris.fact
-  price_day = Faker::Number.digit
-  pax = Faker::Number.digit
-  address = Faker::Address.full_address
-  new_jet = Jet.create!(user: users.sample, name: name, description: description, price_day: price_day, pax: pax, address: address)
-end
+# 10.times do
+#   name = Faker::Name.name
+#   description = Faker::ChuckNorris.fact
+#   price_day = Faker::Number.digit
+#   pax = Faker::Number.digit
+#   address = Faker::Address.full_address
+#   new_jet = Jet.create!(user: users.sample, name: name, description: description, price_day: price_day, pax: pax, address: address)
+# end
 
