@@ -10,6 +10,7 @@
     <!-- Profile picture with dropdown list -->
     <% if user_signed_in? %>
       <a href="/bookings" class="navbar-wagon-item navbar-wagon-link">My bookings</a>
+      <%= link_to 'My profile', user_path(current_user), class: 'navbar-wagon-item navbar-wagon-link' %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
