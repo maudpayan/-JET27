@@ -26,8 +26,8 @@
                       <% else %>
                         <p id=status_booked> Booked</p>
                       <% end %>
-                      <%= link_to 'Edit', edit_jet_path, id: 'edit_button' %>
-                      <%= link_to 'Cancel', jet_path(jet), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, id: 'delete_button'  %>
+                      <%= link_to 'Edit', edit_jet_path(jet), id: 'edit_button' %>
+                      <%= link_to 'Delete', jet_path(jet), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, id: 'delete_button'  %>
                     </div>
                   </div>
                 <% end %>

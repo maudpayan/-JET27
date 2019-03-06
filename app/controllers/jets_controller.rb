@@ -30,12 +30,12 @@ class JetsController < ApplicationController
 
   def update
     @jet.update(jet_params)
-    redirect_to jet_path(@jet.id)
+    redirect_to user_path(current_user)
   end
 
   def destroy
     @jet.destroy
-    redirect_to jets_path
+    redirect_to user_path(current_user)
   end
 
 private
