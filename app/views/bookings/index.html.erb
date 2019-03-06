@@ -3,7 +3,7 @@
     <h1>All your bookings</h1>
   </div>
   <div class="jet_flexbox">
-    <div class="jets_rented text-center">
+    <div class="jets_rented text-center" style='margin-bottom: 20px;'>
       <% if @bookings.any? %>
         <h3>Jets rented</h3>
           <div class="cards-container">
@@ -37,7 +37,7 @@
     </div>
 
 
-    <div class="jets-leased text-center">
+    <div class="jets-leased text-center" style='margin-bottom: 20px;'>
       <% if @my_bookings.any? %>
       <h3>Jets leased</h3>
       <div class="cards-container">
