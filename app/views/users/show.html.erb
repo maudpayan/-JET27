@@ -1,0 +1,42 @@
+<div class="container">
+  <h1><%= @user.first_name%> <%= @user.last_name %></h1>
+  <p>Born on <%= @user.birth_date.strftime("%d - %m -%Y")%></p>
+  <% unless @user.phone_number.empty? %>
+    <p> Phone <%= @user.phone_number%></p>
+  <% end %>
+
+  <div class="jets_rented">
+      <% if @jets.any? %>
+        <h3>Your jets</h3>
+          <div class="cards-container">
+            <div class="row">
+              <% @jets.each do |jet|%>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo, height: 300, width: 400, crop: :fill %>')">
+                    <div class="card-city"><%= jet.city %></div>
+                      <div class="card-description">
+                        <p><%= jet.name %></p>
+                        <ul class= "card-settings list-inline" >
+                          <li><%= "#{jet.price_day} €"%></li>
+                          <li><%= "#{jet.pax} pers" %></li>
+                        </ul>
+                      </div>
+                      <% if jet.bookings.empty? %>
+                        <p id=status_waiting> Not booked </p>
+                      <% else %>
+                        <p id=status_booked> Booked</p>
+                      <% end %>
+                      <%= link_to 'Edit', edit_jet_path(jet), id: 'edit_button' %>
+                      <%= link_to 'Delete', jet_path(jet), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, id: 'delete_button'  %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+          </div>
+        <% else %>
+          <h3> No jet yet</h3>
+          <a href="/" class="btn btn-primary" style='margin-top:20px;'> Lease a jet </a>
+        <% end %>
+    </div>
+</div>
+
