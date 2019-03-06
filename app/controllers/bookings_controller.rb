@@ -21,9 +21,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = 'Booked'
     if @booking.save
-      redirect_to 'pages#home'
+      redirect_to bookings_path
     else
-      render bookings_path
+      render jet_path(@jet)
     end
   end
 
