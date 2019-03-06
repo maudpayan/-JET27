@@ -4,26 +4,35 @@
   </div>
 
   <div class="jets_rented">
-    <h3>Jets rented</h3>
-      <div class="cards-container">
-        <div class="row">
-          <% @bookings.each do |booking|%>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
-                <div class="card-city"><%= booking.jet.city %></div>
-                  <div class="card-description">
-                    <p><%= booking.jet.name %></p>
-                    <ul class= "card-settings list-inline" >
-                      <li><%= "#{booking.jet.price_day} €"%></li>
-                      <li><%= "#{booking.jet.pax} pers" %></li>
-                    </ul>
+    <% if @bookings.any? %>
+      <h3>Jets rented</h3>
+        <div class="cards-container">
+          <div class="row">
+            <% @bookings.each do |booking|%>
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
+                  <div class="card-city"><%= booking.jet.city %></div>
+                    <div class="card-description">
+                      <p><%= booking.jet.name %></p>
+                      <ul class= "card-settings list-inline" >
+                        <li><%= "#{booking.jet.price_day} €"%></li>
+                        <li><%= "#{booking.jet.pax} pers" %></li>
+                      </ul>
+                    </div>
+                    <% if booking.status == 'waiting' %>
+                      <p id=status_waiting>Not booked</p>
+                    <% else %>
+                      <p id=status_booked>Booked</p>
+                    <% end %>
                   </div>
-                <%= cl_image_tag booking.jet.user.photo, class: 'card-user' %>
-              </div>
+                </div>
+              <% end %>
             </div>
-          <% end %>
         </div>
-      </div>
+      <% else %>
+        <h3> No jet leased yet</h3>
+        <a href="/" class="btn btn-primary" style='margin-top:20px;'> Rent a jet </a>
+      <% end %>
   </div>
 
 
@@ -43,7 +52,11 @@
                     <li><%= "#{booking.jet.pax} pers" %></li>
                   </ul>
                 </div>
-              <%= cl_image_tag booking.jet.user.photo, class: 'card-user' %>
+                <% if booking.status == 'waiting' %>
+                  <p id=status_waiting>Not leased</p>
+                <% else %>
+                  <p id=status_booked>Leased</p>
+                <% end %>
               </div>
             </div>
           </div>
