@@ -1,0 +1,25 @@
+#status_waiting {
+  background-color: red;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+#status_booked {
+  background-color: green;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
