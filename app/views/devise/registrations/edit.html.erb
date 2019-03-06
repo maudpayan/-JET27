@@ -27,7 +27,7 @@
       <%= f.input :first_name,
                   input_html: { autocomplete: "current-first_name" }  %>
       <%= f.input :last_name %>
-      <%= f.input :birth_date %>
+      <%= f.input :birth_date, order: [:day, :month, :year] %>
       <%= f.input :sex, :collection => ["Male", "Female"], :as => :radio_buttons%>
       <%= f.input :phone_number%>
       <%= f.input :photo %>

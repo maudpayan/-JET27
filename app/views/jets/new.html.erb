@@ -2,10 +2,10 @@
 
 <div class="container">
   <%= simple_form_for @jet do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, label: 'Jet model' %>
     <%= f.input :description %>
-    <%= f.input :price_day %>
-    <%= f.input :pax %>
+    <%= f.input :price_day, label: 'Price per day (€)', input_html: { min: '0'} %>
+    <%= f.input :pax, label: 'Capacity max', input_html: { min: '1'} %>
     <%= f.input :address %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
