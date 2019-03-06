@@ -15,8 +15,8 @@
                     <div class="card-description">
                       <p><%= booking.jet.name %></p>
                       <ul class= "card-settings list-inline" >
-                        <li><%= "#{booking.jet.price_day} €"%></li>
-                        <li><%= "#{booking.jet.pax} pers" %></li>
+                        <li><%= "#{booking.price_total} €"%></li>
+                        <li><%= "#{booking.pax_booking} pers" %></li>
                       </ul>
                     </div>
                     <% if booking.status == 'waiting' %>
@@ -49,8 +49,8 @@
                 <div class="card-description">
                   <p><%= booking.jet.name %></p>
                   <ul class= "card-settings list-inline" >
-                    <li><%= "#{booking.jet.price_day} €"%></li>
-                    <li><%= "#{booking.jet.pax} pers" %></li>
+                    <li><%= "#{booking.price_total} €"%></li>
+                    <li><%= "#{booking.pax_booking} pers" %></li>
                   </ul>
                 </div>
                 <% if booking.status == 'waiting' %>
