@@ -31,7 +31,7 @@ class JetsController < ApplicationController
     @jet = Jet.new(jet_params)
     @jet.user = current_user
     if @jet.save
-      redirect_to root_path
+      redirect_to '/bookings'
     else
       render :new
     end
