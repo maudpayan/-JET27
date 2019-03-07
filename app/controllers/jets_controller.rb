@@ -11,7 +11,7 @@ class JetsController < ApplicationController
         lng: jet.longitude,
         lat: jet.latitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { jet: jet }),
-        image_url: helpers.asset_url('luka-slapnicar-1120650-unsplash.jpg')
+        image_url: helpers.asset_url('air-transport.svg')
       }
     end
   end

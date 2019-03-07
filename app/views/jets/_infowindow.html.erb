@@ -1,2 +1,13 @@
-<h3>Coucou</h3>
-<p><%= jet.price_day %></p>
+  <br>
+  <div class="card-min" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo %>')">
+    <div class="card-description">
+      <p><%= jet.name %></p>
+    </div>
+  </div>
+  <div>
+    <ul class= "card-settings list-inline" >
+      <li><%= "#{jet.price_day} €"%></li>
+      <li><%= "#{jet.pax} pers" %></li>
+    </ul>
+  </div>
+
