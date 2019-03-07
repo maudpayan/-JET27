@@ -19,7 +19,22 @@
     </ul>
     <br>
     <p><%= @jet.description %></p>
-    <%= link_to 'Add a rewiew', new_jet_review_path(@jet) %>
+    <h3>Reviews</h3>
+    <% if @jet.reviews.empty? %>
+      <p>No review yet</p>
+    <% else %>
+      <% @jet.reviews.each do |review| %>
+        <h5><strong>Review n°<%= review.id %> -</strong> <%= current_user.first_name %> <%= current_user.last_name %> : <%= review.content %> </h5>
+      <% end %>
+    <% end %>
+    <% current_user.bookings.each do |booking| %>
+      <% if booking.jet == @jet%>
+        <% @selected_booking = booking %>
+      <% end %>
+    <% end %>
+    <% if @selected_booking.present? && @selected_booking.status == "Booked" %>
+      <%= link_to 'Add a rewiew', new_jet_review_path(@jet) %>
+    <% end %>
   </div>
 
 
