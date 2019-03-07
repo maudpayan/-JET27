@@ -37,10 +37,10 @@ const initMapbox = () => {
         .setHTML(marker.infoWindow))
         // .setHTML("hello"))
         .addTo(map);
-
-      map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
-
     });
+
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+
 
   fitMapToMarkers(map, markers);
   }
