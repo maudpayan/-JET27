@@ -46,5 +46,14 @@
           <a href="/jets/new" class="btn btn-primary">Lease your jet </a>
         <% end %>
     </div>
+
+    <div class="jets_rented" style='margin-bottom: 20px; margin-top: 50px;'>
+      <% if current_user.reviews.any? %>
+        <h3 style='margin-bottom: 15px;'>Your reviews</h3>
+        <% current_user.reviews.each do |review| %>
+          <p> <strong><%= review.jet.name %></strong> : <%= review.content %> </p>
+        <% end %>
+      <% end %>
+    </div>
 </div>
 
