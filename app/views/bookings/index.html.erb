@@ -22,10 +22,10 @@
                           <!-- <li><%= "#{booking.pax_booking} pers" %></li> -->
                         </ul>
                       </div>
-                      <% if booking.status == 'waiting' %>
-                        <p id=status_waiting>Not booked</p>
+                      <% if booking.status == 'Pending' %>
+                        <p id=status_pending><%= booking.status %></p>
                       <% else %>
-                        <p id=status_booked>Booked</p>
+                        <p id=status_booked><%= booking.status %></p>
                         <%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure? You will recover 50% of the transaction price.' }, id: 'delete_button'  %>
                       <% end %>
                     </div>
@@ -55,10 +55,11 @@
                   <!-- <li><%= "#{booking.pax_booking} pers" %></li> -->
                   </ul>
                 </div>
-                  <% if booking.status == 'waiting' %>
-                    <p id=status_waiting>Not leased</p>
+                  <% if booking.status == 'Pending' %>
+                    <p id=status_pending><%= booking.status %></p>
+                    <%= link_to 'Confirm', confirm_path(booking), method: :patch, data: { confirm: 'Are you sure to confirm?' }, id: 'confirm_button'  %>
                   <% else %>
-                    <p id=status_booked>Leased</p>
+                    <p id=status_booked><%= booking.status %></p>
                     <%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure? You will refund 100% of the transaction price.' }, id: 'delete_button'  %>
                   <% end %>
                 </div>
