@@ -5,7 +5,7 @@
   <div class="row">
     <div class="jets_rented text-center col-xs-12 col-sm-6" style='margin-bottom: 20px;'>
       <% if @bookings.any? %>
-        <h3>Jets rented</h3>
+        <h3 id='title_rented'>Jets rented</h3>
           <div class="cards-container">
             <div class="row">
               <% @bookings.each do |booking|%>
@@ -38,7 +38,7 @@
 
     <div class="jets-leased text-center col-xs-12 col-sm-6" style='margin-bottom: 20px;'>
       <% if @my_bookings.any? %>
-      <h3>Jets leased</h3>
+      <h3 id='title_leased'>Jets leased</h3>
       <div class="cards-container">
         <div class="row">
           <% @my_bookings.each do |booking|%>
