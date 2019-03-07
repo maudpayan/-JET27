@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_143211) do
+ActiveRecord::Schema.define(version: 2019_03_07_112029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_143211) do
     t.date "end_date"
     t.integer "price_total"
     t.integer "pax_booking"
-    t.string "status", default: "waiting"
+    t.string "status", default: "Not booked"
     t.bigint "user_id"
     t.bigint "jet_id"
     t.datetime "created_at", null: false

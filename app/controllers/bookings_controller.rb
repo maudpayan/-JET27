@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_params, only: [:show, :edit, :update, :destroy]
+  before_action :set_params, only: [:show, :edit, :update, :destroy, :confirmation]
 
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.status = "Upcoming"
     @booking.jet = @jet
     @booking.user = current_user
-    @booking.status = 'Booked'
+    @booking.status = 'Pending'
     if @booking.save
       redirect_to bookings_path
     else
@@ -40,6 +40,13 @@ class BookingsController < ApplicationController
     @booking = set_params
     Booking.delete(@booking)
     authorize @booking
+    redirect_to bookings_path
+  end
+
+  def confirm
+    @booking = Booking.find(params[:format])
+    @booking.status = 'Booked'
+    @booking.save
     redirect_to bookings_path
   end
 

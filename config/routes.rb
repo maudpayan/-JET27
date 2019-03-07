@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
   get '/confirmation', to: 'pages#confirmation', as: :confirmation
+  patch '/confirm', to: 'bookings#confirm', as: :confirm
 end
