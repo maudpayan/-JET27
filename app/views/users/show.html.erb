@@ -1,11 +1,19 @@
 <div class="container">
-  <h1><%= @user.first_name%> <%= @user.last_name %></h1>
-  <p>Born on: <%= @user.birth_date.strftime("%d - %m -%Y")%></p>
-  <% unless @user.phone_number.empty? %>
-    <p> Phone: <%= @user.phone_number%></p>
-  <% end %>
+  <div class="user_top">
+    <div class="user_photo">
+      <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "user_photo_left", style: 'width: 300px; padding-left:30px;'%>
+    </div>
+    <div class="user_details text-center" style='padding-right: 100px'>
+      <h1><%= @user.first_name%> <%= @user.last_name %></h1>
+          <i class="fas fa-phone" style='color: #2667FF;'></i>
+          <p><%= @user.phone_number%></p>
+          <i class="far fa-envelope-open" style='color: #2667FF;'></i>
+          <p><%= @user.email%></p>
+        <p></p>
+    </div>
+  </div>
 
-  <div class="jets_rented" style='margin-bottom: 20px;'>
+  <div class="jets_rented" style='margin-bottom: 20px; margin-top: 50px;'>
       <% if @jets.any? %>
         <h3>Your jets</h3>
           <div class="cards-container">
