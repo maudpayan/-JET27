@@ -1,8 +1,11 @@
 <div class="container">
+
   <div class="text-center">
     <h1>All your bookings</h1>
   </div>
+
   <div class="row">
+
     <div class="jets_rented text-center col-xs-12 col-sm-6" style='margin-bottom: 20px;'>
       <% if @bookings.any? %>
         <h3 id='title_rented'>Jets rented</h3>
@@ -59,15 +62,16 @@
                     <%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure? You will refund 100% of the transaction price.' }, id: 'delete_button'  %>
                   <% end %>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-    <% else %>
+      <% else %>
       <h3> No jet leased yet</h3>
       <a href="/jets/new" class="btn btn-primary" style='margin-top:20px;'>Lease your jet </a>
-    <% end %>
+      <% end %>
     </div>
+
   </div>
+
 </div>

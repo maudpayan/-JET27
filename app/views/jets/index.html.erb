@@ -1,32 +1,47 @@
-<h1>All the Jets in Paris</h1>
-
-
 <div class=" container container-index">
-  <div class="cards-container">
-    <div class="row">
-      <% @jets.each do |jet|%>
-        <%= link_to jet_path(@search.merge(id: jet.id)) do %>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo, height: 300, width: 400, crop: :fill %>')">
-              <div class="card-city"><%= jet.address %></div>
-              <div class="card-description">
-                <p><%= jet.name %></p>
-                <ul class= "card-settings list-inline" >
-                  <li><%= "#{jet.price_day} €"%></li>
-                  <li><%= "#{jet.pax} pers" %></li>
-                </ul>
-              </div>
-              <%= cl_image_tag jet.user.photo, class: 'card-user' %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+  <div class="row">
 
-  <div class="map-container">
-    <div id="map" style="width: 100%; height: 600px; "data-markers="<%= @markers.to_json %> "data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col-xs-12 col-sm-6">
+      <h3>The jets that fit your research</h3>
+
+      <div class="cards-container">
+        <div class="row">
+          <% @jets.each do |jet|%>
+            <%= link_to jet_path(@search.merge(id: jet.id)) do %>
+              <div class="col-xs-12 col-sm-6">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo, height: 300, width: 400, crop: :fill %>')">
+                  <div class="card-city"><%= jet.address %></div>
+                  <div class="card-description">
+                    <p><%= jet.name %></p>
+                    <ul class= "card-settings list-inline" >
+                      <li><%= "#{jet.price_day} €"%></li>
+                      <li><%= "#{jet.pax} pers" %></li>
+                    </ul>
+                  </div>
+                  <%= cl_image_tag jet.user.photo, class: 'card-user' %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
+
+
+
+    <div class="col-xs-12 col-sm-6">
+
+      <br>
+      <div class="map-container">
+        <div id="map" style="width: 100%; height: 600px; "data-markers="<%= @markers.to_json %> "data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+      <br>
+
+    </div>
+
+
   </div>
 </div>
 
