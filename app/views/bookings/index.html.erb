@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="text-center">
+  <div class="text-center" style='margin-bottom: 30px;'>
     <h1>All your bookings</h1>
   </div>
 
@@ -34,7 +34,7 @@
               </div>
           </div>
         <% else %>
-          <h3> No jet leased yet</h3>
+          <h3> No jet rented yet</h3>
           <a href="/" class="btn btn-primary" style='margin-top:20px;'> Rent a jet </a>
         <% end %>
     </div>
@@ -68,7 +68,7 @@
           </div>
         </div>
       <% else %>
-      <h3> No jet leased yet</h3>
+      <h3 id="no_jet_leased"> No jet leased yet</h3>
       <a href="/jets/new" class="btn btn-primary" style='margin-top:20px;'>Lease your jet </a>
       <% end %>
     </div>
