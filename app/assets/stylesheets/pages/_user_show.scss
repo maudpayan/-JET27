@@ -10,6 +10,24 @@
 
 .user_top {
   display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.user_details {
+  padding-left: 80px;
+}
+
+.user_top {
+  background-color: rgba(250, 250, 250, 0.4);
+  margin-top: -60vh;
+  border-radius: 4px;
+  padding: 10px 0px;
+  width: 700px;
+}
+
+.banner_haute {
+  display: flex;
   justify-content: space-around;
   align-items:center;
 }
