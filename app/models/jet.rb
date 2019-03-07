@@ -11,4 +11,11 @@ class Jet < ApplicationRecord
   validates :pax, presence: true
   validates :address, presence: true
   validates :photo, presence: true
+
+  # include PgSearch
+  # pg_search_scope :search_by_title_and_syllabus,
+  #   against: [ :title, :syllabus ],
+  #   using: {
+  #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  #   }
 end

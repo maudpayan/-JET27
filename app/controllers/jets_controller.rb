@@ -5,7 +5,7 @@ class JetsController < ApplicationController
 
   def index
     @search = { address: params[:address], pax: params[:pax], start_date: params[:start_date], end_date: params[:end_date] }
-    @jets = Jet.near(params[:address], 10).where("pax >= ?", params[:pax].to_i).where.not(latitude: nil, longitude: nil)
+    @jets = Jet.near(params[:address], 20).where("pax >= ?", params[:pax].to_i).where.not(latitude: nil, longitude: nil)
     @markers = @jets.map do |jet|
       {
         lng: jet.longitude,

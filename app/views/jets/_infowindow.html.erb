@@ -1,13 +1,12 @@
   <br>
   <div class="card-min" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo %>')">
-    <div class="card-description">
+    <div class="card-description" style="position: top">
       <p><%= jet.name %></p>
     </div>
   </div>
   <div>
-    <ul class= "card-settings list-inline" >
+    <ul class= "card-settings list-inline" style="font-weight: bold" >
       <li><%= "#{jet.price_day} €"%></li>
       <li><%= "#{jet.pax} pers" %></li>
     </ul>
   </div>
-
