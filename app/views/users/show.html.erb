@@ -57,9 +57,9 @@
         <% current_user.reviews.each do |review| %>
           <div class="card" style="height: 110px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path review.jet.photo, crop: :fill %>')">
             <div class='review_text' style='padding-left: 20px;'>
-              <p> <strong><%= review.jet.name %></strong></p>
-              <p><%= review.title %> </p>
-              <p><%= review.content %> </p>
+              <p id='name_review_user'> <strong><%= review.jet.name %></strong></p>
+              <p id='title_review_user'><%= review.title %> </p>
+              <p id='content_review_user'><%= review.content %> </p>
             </div>
           </div>
         <% end %>
