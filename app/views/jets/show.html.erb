@@ -6,8 +6,6 @@
 <div class="container container-show">
 
   <div class="container jet-details">
-    <h2><%= "Rent a jet in #{@jet.address}" %></h2>
-    <br>
     <h3><%= @jet.name %></h3>
     <ul class="list-inline jet-parameters" >
       <li>
@@ -18,13 +16,15 @@
         </li>
     </ul>
     <br>
-    <p><%= @jet.description %></p>
-    <h3>Reviews</h3>
+    <p style='margin-bottom: 40px;'><%= @jet.description %></p>
     <% if @jet.reviews.empty? %>
       <p>No review yet</p>
     <% else %>
       <% @jet.reviews.each do |review| %>
-        <h5><strong>Review n°<%= review.id %> -</strong> <%= current_user.first_name %> <%= current_user.last_name %> : <%= review.content %> </h5>
+      <div id="review">
+        <p id="review_content"> <%= review.content %> </p>
+        <p id="review_details"> Leaved by <%= current_user.first_name %> <%= current_user.last_name %> <%= review.created_at.strftime("on %m/%d/%Y") %></p>
+      </div>
       <% end %>
     <% end %>
     <% current_user.bookings.each do |booking| %>
