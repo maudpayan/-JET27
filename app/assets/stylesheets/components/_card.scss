@@ -18,7 +18,10 @@
   color: white;
   position: relative;
   padding: 5px;
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 20px;
+  border-radius: 4px;
 }
 .card-user {
   position: absolute;
@@ -47,16 +50,17 @@
   opacity: 0.7;
   font-weight: lighter;
 }
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
+// }
+.card:hover {
+  opacity: 0.7;
+  background-color: white;
 }

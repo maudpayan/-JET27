@@ -1,14 +1,20 @@
-<div class=" container container-index">
-  <div class="row">
+<div class="container-index">
+  <div class="row" style="background-color: #F4F4F4">
 
-    <div class="col-xs-12 col-sm-6">
-      <h3>The jets that fit your research</h3>
+    <div class="col-xs-12 col-sm-8" style="padding-left: 40px">
+      <ul class="list-inline">
+        <li><h3>Try the jet of your dream </h3></li>
+        <!-- <li><img src="airplane_index.png" alt=""></li> -->
+        <li>
+          <%= image_tag 'airplane_index.png', class: 'icone' %>
+        </li>
+      </ul>
 
       <div class="cards-container">
         <div class="row">
           <% @jets.each do |jet|%>
             <%= link_to jet_path(@search.merge(id: jet.id)) do %>
-              <div class="col-xs-12 col-sm-6">
+              <div class="col-xs-12 col-sm-6" style="margin: 10px, 10px">
                 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo, height: 300, width: 400, crop: :fill %>')">
                   <div class="card-city"><%= jet.address %></div>
                   <div class="card-description">
@@ -30,7 +36,7 @@
 
 
 
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-4" style="padding-left: 0px">
 
       <br>
       <div class="map-container">
