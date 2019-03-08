@@ -99,19 +99,22 @@
 }
 
 #title_leased {
-  border-bottom: 1px solid;
+  border-bottom: 3px solid rgb(230, 230, 230);
+  border-radius: 3px;
   margin: 5px 0px 10px 0px;
   padding-bottom: 5px;
 }
 
 #title_rented {
-  border-bottom: 1px solid;
+  border-bottom: 3px solid rgb(230, 230, 230);
+  border-radius: 3px;
   margin: 5px 0px 10px 0px;
   padding-bottom: 5px;
 }
 
 #no_jet_leased {
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid rgb(230, 230, 230);
+  border-radius: 3px;
   margin: 0px;
   padding-bottom: 5px;
 }
@@ -123,18 +126,18 @@
   border-radius: 2px;
 }
 
-.jets_rented {
-  background-color: rgba(240, 240, 240, 0.4);
-  border: 1px solid rgba(240, 240, 240, 1);
-  border-radius: 5px;
-  border-shadow: 1px 1px 3px rgba(240, 240, 240, 1);
-  padding: 10px;
-}
+// .jets_rented {
+//   background-color: rgba(240, 240, 240, 0.4);
+//   border: 1px solid rgba(240, 240, 240, 1);
+//   border-radius: 5px;
+//   border-shadow: 1px 1px 3px rgba(240, 240, 240, 1);
+//   padding: 10px;
+// }
 
-.jets-leased {
-  background-color: rgba(240, 240, 240, 0.4);
-  border: 1px solid rgba(240, 240, 240, 1);
-  border-radius: 5px;
-  border-shadow: 1px 1px 3px rgba(240, 240, 240, 1);
-  padding: 10px;
-}
+// .jets-leased {
+//   background-color: rgba(240, 240, 240, 0.4);
+//   border: 1px solid rgba(240, 240, 240, 1);
+//   border-radius: 5px;
+//   border-shadow: 1px 1px 3px rgba(240, 240, 240, 1);
+//   padding: 10px;
+// }
