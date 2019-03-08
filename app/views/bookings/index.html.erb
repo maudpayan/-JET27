@@ -1,11 +1,8 @@
+<div class="text-center" id='calendar_pic' style="margin-bottom: 10px; background-image: url(<%= asset_url("calendar3.jpg")%>)" >
+  <!-- <h1 style='padding-top: 10px; margin-top:0px; color:white; font-weight: bolder;'>All your bookings</h1> -->
+</div>
 <div class="container">
-
-  <div class="text-center" style='margin-bottom: 30px;'>
-    <h1>All your bookings</h1>
-  </div>
-
-  <div class="row">
-
+  <div class="row text-center">
     <div class="jets_rented text-center col-xs-12 col-sm-6" style='margin-bottom: 20px;'>
       <% if @bookings.any? %>
         <h3 id='title_rented'>Jets rented</h3>
@@ -17,7 +14,7 @@
                     <div class="card-city"><%= booking.jet.address %></div>
                       <div class="card-description">
                         <p><%= booking.jet.name %></p>
-                        <ul class= "card-settings list-inline" >
+                        <ul class= "card-settings list-inline" style='text-align: left' >
                           <li><%= "#{booking.price_total} €"%></li>
                           <!-- <li><%= "#{booking.pax_booking} pers" %></li> -->
                         </ul>
@@ -50,7 +47,7 @@
               <div class="card-city"><%= booking.jet.address%></div>
                 <div class="card-description">
                   <p><%= booking.jet.name %></p>
-                  <ul class= "card-settings list-inline" >
+                  <ul class= "card-settings list-inline" style='text-align: left'  >
                     <li><%= "#{booking.price_total} €"%></li>
                   <!-- <li><%= "#{booking.pax_booking} pers" %></li> -->
                   </ul>
