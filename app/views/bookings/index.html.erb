@@ -11,7 +11,10 @@
               <% @bookings.each do |booking|%>
                 <div class="col-xs-12 col-sm-6">
                   <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
-                    <div class="card-city"><%= booking.jet.address %></div>
+                    <div class="card-city col-xs-8" style='text-align:left; padding-left: 0px;'>
+                      <% mycity = booking.jet.address.split(',')%>
+                      <%= "#{mycity[1]}, #{mycity[3]}" %>
+                    </div>
                       <div class="card-description">
                         <p><%= booking.jet.name %></p>
                         <ul class= "card-settings list-inline" style='text-align: left' >
@@ -44,7 +47,10 @@
           <% @my_bookings.each do |booking|%>
             <div class="col-xs-12 col-sm-6">
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.jet.photo, height: 300, width: 400, crop: :fill %>')">
-              <div class="card-city"><%= booking.jet.address%></div>
+              <div class="card-city col-xs-8" style='text-align:left; padding-left: 0px;'>
+                <% mycity = booking.jet.address.split(',')%>
+                <%= "#{mycity[1]}, #{mycity[3]}" %>
+                </div>
                 <div class="card-description">
                   <p><%= booking.jet.name %></p>
                   <ul class= "card-settings list-inline" style='text-align: left'  >

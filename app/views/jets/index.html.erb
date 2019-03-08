@@ -16,7 +16,7 @@
             <%= link_to jet_path(@search.merge(id: jet.id)) do %>
               <div class="col-xs-12 col-sm-6" style="margin: 10px, 10px">
                 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo, height: 300, width: 400, crop: :fill %>')">
-                  <div class="card-city">
+                  <div class="card-city col-xs-8" style='text-align:left; padding-left: 0px;'>
                     <% mycity = jet.address.split(',')%>
                     <%= "#{mycity[1]}, #{mycity[3]}" %>
                     <%#= jet.address %>
